@@ -1,0 +1,29 @@
+App\Entity\Product:
+    product (template):
+        price: <numberBetween(9, 99)>
+        description: <realText(500, 5)>
+
+    product_1 (extends product):
+        name: Sheer Shears
+        imageFilename: product_1.jpg
+        slug: sheer-Sheers		
+    product_2 (extends product):
+        name: Wool Hauling Basket
+        imageFilename: product_2.jpg
+        slug: wool-haunting-basket
+    product_3 (extends product):
+        name: After-Shear (Fresh Cut Grass)
+        slug: after-Sshear-(Fresh Cut Grass)
+        imageFilename: product_3.jpg
+    product_4 (extends product):
+        name: After-Shear (Morning Dew)
+        slug: after-shear (morning Dew)
+        imageFilename: product_4.jpg
+    product_5 (extends product):
+        name: Shear Comb
+        slug: shear-comb
+        imageFilename: product_5.jpg
+    product_6 (extends product):
+        name: Shearly Conditioned
+        slug: shearly-sonditioned
+        imageFilename: product_6.png

@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Author{% endblock %}
+
+{% block body %}
+
+<h3>Formulaire d'auteur.</h3>
+
+<div class="well">
+   {{ form_start(form, {'attr': {'class': 'form-horizontal', 'novalidate' : 'novalidate'}}) }}
+
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+      {# Génération du label. #}
+      {{ form_label(form.name, "Name :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+      {# Affichage des erreurs pour ce champ précis. #}
+      {{ form_errors(form.name) }}
+
+      <div class="col-sm-4">
+        {# Génération de l'input. #}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+	
+		
+	<div class="form-group">
+      {{ form_label(form.user, "Username :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.user) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+	<div class="form-group">
+      {{ form_label(form.company, "Company :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.company) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.company, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+	<div class="form-group">
+      {{ form_label(form.shortBio, "Biog :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.shortBio) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.shortBio, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+	
+	<div class="form-group">
+      {{ form_label(form.image, "Image :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.image) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.image, {'attr': {'class': 'form-control'}}) }}
+      </div>
+	 </div>
+	 
+	 <br />
+	
+	
+	<div class="form-group">
+	
+      {{ form_label(form.phone, "Phone :", {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.phone) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+	<div class="form-group">
+	
+      {{ form_label(form.facebook, "Facebook :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.facebook) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.facebook, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+	
+	<div class="form-group">
+      {{ form_label(form.twitter, "Twitter :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.twitter) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.twitter, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+	
+	<div class="form-group">
+	
+      {{ form_label(form.github, "Github :", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+      {{ form_errors(form.github) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.github, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+	
+  {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+  {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+  {# Génération automatique des champs pas encore écrits.
+     Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+     et tous les champs cachés (type « hidden »). #}
+  {#{{ form_rest(form) }}#}
+  
+  {# Fermeture de la balise <form> du formulaire HTML #}
+  {{ form_end(form) }}
+</div>
+{% endblock %}
+

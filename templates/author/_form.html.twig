@@ -1,0 +1,21 @@
+
+{{form_start(form)}}
+<div class="row">
+<div class="col-sm-3">{{form_row(form.pseudo)}}</div>
+<div class="col-sm-3">{{form_row(form.fullName)}}</div>
+
+</div>
+<div class="row">
+<div class="col-sm-3">{{form_row(form.phone)}}</div>
+<div class="col-sm-3">{{form_row(form.bio)}}</div>
+</div>
+
+<div class="row">
+
+<div class="col-sm-3">{{form_row(form.image)}}</div>
+</div>
+
+{{ form_rest(form) }}
+
+     {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+

@@ -1,0 +1,51 @@
+
+<div class="">
+{{ form_start(form) }}
+    {{ form_row(form.title, {
+        label: 'Article title'
+    }) }}
+
+    {{ form_row(form.author) }}
+         <div class="row">
+        <div class="col-sm-9">
+            {{ form_row(form.imageFile, {
+                attr: {
+                    'placeholder': 'Select an article image'
+                }
+            }) }}
+        </div>
+        <div class="col-sm-3">
+            {% if form.vars.data.imageFilename|default %}
+                <a href="{{uploaded_asset(form.vars.data.imagePath) }}" target="_blank">
+                    <img src="{{ form.vars.data.imagePath|imagine_filter('squared_thumbnail_small') }}" height="100">
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{{ form_row(form.heartCount) }}
+
+    {{ form_row(form.location, {
+        attr: {
+            'data-specific-location-url': path('admin_article_location_select'),
+            'class': 'js-article-form-location'
+        }
+    }) }}
+<div class="js-specific-location-target">
+    {%  if form.specificLocationName is defined %}
+        {{ form_row(form.specificLocationName) }}
+    {% endif %}
+</div>
+{{ form_row(form.content) }}
+    {% if form.publishedAt is defined %}
+        {{ form_row(form.publishedAt) }}
+    {% endif %}
+
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+            {{ form_rest(form) }}
+{{ form_end(form) }}
+
+
+
+
+
+</div>

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Article{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/algolia-autocomplete.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-6">
+
+
+
+            {{ include('article_admin/_form.html.twig') }}
+
+
+    <a href="{{ path('admin_article_list') }}">back to list</a>
+    
+
+</div>
+</div>
+</div>
+
+
+    
+
+
+
+{% endblock %}
